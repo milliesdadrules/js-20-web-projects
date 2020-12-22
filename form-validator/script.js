@@ -5,17 +5,19 @@ const email = document.getElementById('email')
 const password = document.getElementById('password')
 const password2 = document.getElementById('password2')
 
-// functions
-
+// Show input error message
 const showError = (input, message) => {
-    
+    const formControl = input.parentElement
+    formControl.className = 'form-control error'
+    const small = formControl.querySelector('small')
+    small.innerText = message
 }
 
 // Event listener onSubmit
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     if(username.value === ''){
-        showError(username, 'Username is required')
+        showError(username, 'Username is required!!!')
     } else {
         showSuccess(username)
     }
