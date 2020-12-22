@@ -19,6 +19,23 @@ const isValidEmail = (email) => {
     return re.test(String(email).toLowerCase());
 }
 
+// Check required fields
+const checkRequired = (inputArray) => {
+    inputArray.forEach((input) => {
+
+        if(input.value.trim() === ''){
+            showError(input, `${getFieldName(input)} is required`)
+        } else {
+            showSuccess(input)
+        }
+        console.log(input.value);
+    })
+}
+
+// Get feildname
+const getFieldName = (input) => {
+    return input.id ? input.id.charAt(0).toUpperCase() + input.id.slice(1) : ''
+} 
 // Show input success message
 const showSuccess = (input) => {
     const formControl = input.parentElement
@@ -29,4 +46,7 @@ const showSuccess = (input) => {
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     
+    checkRequired([username, email, password, password2])
+    checkLength(username, 3, 15)
+    checkLength(password, 6, 25)
 })
