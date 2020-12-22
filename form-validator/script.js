@@ -32,7 +32,7 @@ const checkRequired = (inputArray) => {
     })
 }
 
-// Get feildname
+// Get fieldname
 const getFieldName = (input) => {
     return input.id ? input.id.charAt(0).toUpperCase() + input.id.slice(1) : ''
 } 
