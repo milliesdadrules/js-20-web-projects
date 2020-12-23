@@ -14,21 +14,24 @@ const showError = (input, message) => {
 }
 
 // Check email is valid
-const isValidEmail = (email) => {
+const checkEmail = (input) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+
+    if (re.test(String(input.value).toLowerCase())) {
+        showSuccess(input)
+    } else {
+        showError(input, `Email is not valid`)
+    }
 }
 
 // Check required fields
 const checkRequired = (inputArray) => {
     inputArray.forEach((input) => {
-
         if(input.value.trim() === ''){
             showError(input, `${getFieldName(input)} is required`)
         } else {
             showSuccess(input)
         }
-        console.log(input.value);
     })
 }
 
@@ -60,4 +63,5 @@ form.addEventListener('submit', (e) => {
     checkRequired([username, email, password, password2])
     checkLength(username, 3, 15)
     checkLength(password, 6, 25)
+    checkEmail(email)
 })
