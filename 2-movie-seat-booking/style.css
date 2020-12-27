@@ -67,6 +67,7 @@ body {
     transform: scale(1.2);
 }
 
+/* Unslect seat in the showcase class will not be affected by hover like the available seats in the theatre */
 .showcase .seat:Not(.occupied):hover {
     cursor: default;
     transform: scale(1);
