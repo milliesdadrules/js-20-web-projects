@@ -6,7 +6,15 @@ const movieSelect = document.getElementById('movie')
 
 const ticketPrice = +movieSelect.value
 
-console.log(ticketPrice)
+// Update total and count
+const updateSelectedCount = () => {
+    const selectedSeats = document.querySelectorAll('.row .seat.select')
+
+    const selectedSeatsCount = selectedSeats.length
+
+    count.innerText = selectedSeatsCount
+    total.innerText = +selectedSeatsCount * ticketPrice
+}
 
 container.addEventListener('click', (e) => {
     if (
@@ -14,5 +22,7 @@ container.addEventListener('click', (e) => {
         !e.target.classList.contains('occupied')
     ) {
         e.target.classList.toggle('select')
+        
+        updateSelectedCount()
     }
 })
