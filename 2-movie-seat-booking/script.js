@@ -16,6 +16,7 @@ const populateUI = () => {
             }
         })
     } 
+    // Gets the ticket price for the movie stored in localStorage
     const selectedMovieIndex = localStorage.getItem('selectedMovieIndex')
     if(selectedMovieIndex !== null ) {
         movieSelect.selectedIndex = selectedMovieIndex
