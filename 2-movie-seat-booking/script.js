@@ -12,7 +12,7 @@ const populateUI = () => {
     if(selectedSeats!== null && selectedSeats.length > 0){
         seats.forEach((seat, index) => {
             if (selectedSeats.indexOf(index) > -1) {
-                seat.classList.add('select')
+                seat.classList.add('occupied')
             }
         })
     } 
