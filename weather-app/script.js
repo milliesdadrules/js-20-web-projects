@@ -1,13 +1,4 @@
 // JavaScript
-// const getWeather = async (long, lat) => {
-//     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=4b5597c8044a6d696d0b7c95f9c7cd8b`,{})
-//         if(response.status === 200){
-//             const data = response.json()
-//             return data
-//         } else {
-//             throw new Error("Failed to fetch data")
-//         }
-// }
 
 window.addEventListener('load', () => {
     if (navigator.geolocation) {
