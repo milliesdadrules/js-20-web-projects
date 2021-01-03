@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors</title>
+    <style>
+      /* Element/Tag selector */
+      body {
+        background-color: #333;
+      }
+      /* targeting element with class 'green-heading' */
+      /* most cases the element wouldn't be used here. */
+      /* . is for class */
+      .primary-heading {
+        color: green;
+      }
+
+      /* # is for id */
+      #welcome {
+        background-color: #f4f4f4f4;
+      }
+
+      /* Multiple Selectors */
+      #welcome,
+      #about {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 5px;
+      }
+
+      /* Nested Selector  */
+      #welcome p {
+        font-size: 20px;
+      }
+
+      #about {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="welcome">
+      <h2 class="primary-heading">Welcome</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora hic
+        aspernatur inventore nisi! Optio, vero doloremque tempore architecto
+        provident tempora?
+      </p>
+    </div>
+    <div id="about">
+      <h2>About</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem quo
+        odio expedita asperiores ipsum nemo voluptatum dolor quisquam tenetur
+        esse?
+      </p>
+    </div>
+  </body>
+</html>
